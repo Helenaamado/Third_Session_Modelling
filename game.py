@@ -4,7 +4,7 @@ from deck import Deck, Card
 class Hand:
     def __init__(self,deck):
         """
-        Method that creates and deals a 5 card hand
+        Method that creates a 5 card hand
         :param deck: the poker deck
         """
         cards=[]
@@ -15,7 +15,7 @@ class Hand:
     @property
     def cards(self):
         """
-        Decorator method to access the cards as .cards and not as ._cards
+        Method to access the cards as .cards and not as ._cards
         :return: cards
         """
         return self._cards
@@ -30,7 +30,7 @@ class Hand:
     @property
     def is_flush(self):
         """
-        Method that checks if a hand is a flush or not by comparing all the cards in the hand with the first
+        Method that checks if a hand is a flush by comparing all the cards in the hand with the first
         :return: True if it is a flush and False if it is not a flush
         """
         for card in self.cards[1:]:
@@ -41,7 +41,7 @@ class Hand:
     @property
     def num_matches(self):
         """
-        Goes over each hand and returns the amount of matches
+        Method that goes over each hand and returns the amount of matches
         :return: number of matches
         """
         matches = 0
@@ -56,7 +56,7 @@ class Hand:
     @property
     def is_pair(self):
         """
-        Checks if a hand has 1 pair
+        Method that checks if a hand has 1 pair
         :return: TRUE if it has 1 pair, FALSE if it doesn't have 1 pair
         """
         if self.num_matches==2: #One pair is 2 matches
@@ -66,7 +66,7 @@ class Hand:
     @property
     def is_2pair(self):
         """
-        Checks if a hand has 2 pairs
+        Method that checks if a hand has 2 pairs
         :return: TRUE if it has 2 pairs, FALSE if it doesn't have 2 pairs
         """
         if self.num_matches == 4:  # One pair is 2 matches
@@ -76,7 +76,7 @@ class Hand:
     @property
     def is_trips(self):
         """
-        Checks if a hand has 3 pairs
+        Method that checks if a hand has 3 pairs
         :return: True if it does/ False if it doesn't
         """
         if self.num_matches == 6:
@@ -86,7 +86,7 @@ class Hand:
     @property
     def is_quads(self):
         """
-        Checks if a hand has 6 pairs
+        Method that checks if a hand has 6 pairs
         :return: True if it does/ False if it doesn't
         """
         if self.num_matches == 12:
@@ -96,7 +96,7 @@ class Hand:
     @property
     def is_full_house(self):
         """
-        Checks if a hand is a full house, if it has 8 matches
+        Method that checks if a hand is a full house, if it has 8 matches
         :return: TRUE if full house, FALSE if else
         """
         if self.num_matches == 8:
@@ -107,7 +107,7 @@ class Hand:
     @property
     def is_straight(self):
         """
-        Checks if a hand is a straight by checking if:
+        Method that checks if a hand is a straight by checking if:
         1. There are no repeated cards, the number of matches is 0
         2. The difference between the highest card and the lowest card rank indices is ==4
         :return: True if the hand is a straight, False otherwise

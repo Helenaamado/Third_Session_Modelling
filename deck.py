@@ -4,7 +4,7 @@ class Card:
     SUITS=["♣","♦","♥","♠"] #clubs, diamonds, hearts, spades
     def __init__(self,rank,suit):
         """
-        Method that creates a card instance by checking if rank and suit are valid, meaning if they are within the lists RANKS and SUITS
+        Method that creates a card instance by checking if rank and suit are valid.
         :param rank: a rank
         :param suit: a suit
         """
@@ -18,7 +18,7 @@ class Card:
     @property
     def rank(self):
         """
-        Decorator allowing you to access the rank of a card as .rank instead of exposing the internal variable ._rank
+        A decorator method that allows you to access the rank of a card as .rank instead of exposing the internal variable ._rank
         :return: rank
         """
         return self._rank
